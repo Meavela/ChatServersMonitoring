@@ -138,6 +138,20 @@ export default function PersistentDrawerLeft() {
           ))}
         </List>
       </Drawer>
+      
+      {/* METTRE LE CODE ICI 
+      
+      <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: open,
+        })}
+      >
+        <div className={classes.drawerHeader} />
+        <Users />
+      </main>
+      
+      */}
+
     </div>
   );
 }
