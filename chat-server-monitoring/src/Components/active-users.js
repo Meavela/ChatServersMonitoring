@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import ActiveServers from './activeServers';
+import ActiveServers from './active-servers';
 
 
 const useStyles = makeStyles({
@@ -31,7 +31,6 @@ export default function SimpleCard() {
     <Card className={classes.root} style={{ textAlign : 'center' }}>
         <CardHeader title="Active users" style={{ color : 'blue', paddingBottom : 0 }}/>
         <CardContent style={{ paddingTop: 0 }}>
-            {/* <Typography className={classes.title} color="textSecondary" gutterBottom> */}
             <h1 style={{ fontSize : 40 }}>
                 1
             </h1>

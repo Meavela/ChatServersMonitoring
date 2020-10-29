@@ -1,6 +1,6 @@
 import React from 'react';
-import ActiveUsers from './activeUsers';
-import ListUsers from './listUsers';
+import ActiveUsers from './active-users';
+import ListUsers from './list-users';
 
 class Users extends React.Component {
 
