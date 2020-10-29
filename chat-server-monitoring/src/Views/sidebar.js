@@ -16,6 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import PeopleIcon from '@material-ui/icons/People';
+import HomeIcon from '@material-ui/icons/Home';
 import ChatIcon from '@material-ui/icons/Chat';
 import { Link } from "react-router-dom";
 
@@ -131,6 +132,10 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
+            <ListItem button key={"Home"} component={Link} to={"/"}>
+              <ListItemIcon>{<HomeIcon />}</ListItemIcon>
+              <ListItemText primary={"Home"} />
+            </ListItem>
           {['Users', 'Chatrooms'].map((text, index) => (
             <ListItem button key={text} component={Link} to={index % 2 === 0 ? "/Users" : "/Chatrooms"}>
               <ListItemIcon>{index % 2 === 0 ? <PeopleIcon /> : <ChatIcon />}</ListItemIcon>
