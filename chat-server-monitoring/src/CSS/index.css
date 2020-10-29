@@ -13,7 +13,7 @@ code {
 }
 
 .count-card {
-  width: 50%;
+  width: auto !important;
   text-align: center;
   margin: 50px;
 }
