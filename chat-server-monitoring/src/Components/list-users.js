@@ -17,18 +17,32 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(server, userId, name, status) {
-  return { server, userId, name, status };
-}
+var errorMessage = "";
 
-const rows = [
-  createData('http://127.0.0.1:4567', 0, 'Lou', 'ACTIVE'),
-  createData('http://127.0.0.1:2435', 1, 'Marc-Antoine', 'INACTIVE'),
-];
+function getUsers(){
+  var users = [{server : 'http://127.0.0.1:4567', userId : 0, name : 'Lou', status : 'ACTIVE'},
+               {server : 'http://127.0.0.1:2435', userId : 1, name : 'Marc-Antoine', status : 'INACTIVE'}];
+
+  fetch("http://127.0.0.1:4567/users")
+      .then(res => res.json())
+      .then(
+        (result) => {users += result.items},
+        (error) => {errorMessage = error}
+      )
+  fetch("http://127.0.0.1:2435/users")
+      .then(res => res.json())
+      .then(
+        (result) => {users += result.items},
+        (error) => {errorMessage = error}
+      )
+
+  return users;
+}
 
 export default function ListUsers() {
   const classes = useStyles();
-
+  
+  var users = getUsers();
   return (
     <Card className={classes.root} style={{ textAlign : 'center' }}>
         <CardHeader title="Users" style={{ color : 'blue', paddingBottom : 0 }}/>
@@ -44,7 +58,7 @@ export default function ListUsers() {
                     </TableRow>
                     </TableHead>
                     <TableBody>
-                    {rows.map((row) => (
+                    {users.map((row) => (
                         <TableRow key={row.server}>
                         <TableCell component="th" scope="row">
                             {row.server}
