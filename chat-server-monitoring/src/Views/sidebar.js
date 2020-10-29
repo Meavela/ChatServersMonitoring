@@ -19,6 +19,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import HomeIcon from '@material-ui/icons/Home';
 import ChatIcon from '@material-ui/icons/Chat';
 import { Link } from "react-router-dom";
+import Home from "../Components/home";
 
 const drawerWidth = 240;
 
@@ -145,18 +146,14 @@ export default function PersistentDrawerLeft() {
         </List>
       </Drawer>
 
-      {/* METTRE LE CODE ICI 
-      
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
       >
         <div className={classes.drawerHeader} />
-        <Users />
+        <Home />
       </main>
-
-      */}
     </div>
   );
 }
