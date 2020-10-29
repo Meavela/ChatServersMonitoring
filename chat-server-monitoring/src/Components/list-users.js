@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
+import Servers from '../servers.json'
 
 const useStyles = makeStyles({
   table: {
@@ -23,19 +24,14 @@ function getUsers(){
   var users = [{server : 'http://127.0.0.1:4567', userId : 0, name : 'Lou', status : 'ACTIVE'},
                {server : 'http://127.0.0.1:2435', userId : 1, name : 'Marc-Antoine', status : 'INACTIVE'}];
 
-  fetch("http://127.0.0.1:4567/users")
+  Servers.names.map((text) => (
+    fetch(text)
       .then(res => res.json())
       .then(
         (result) => {users += result.items},
         (error) => {errorMessage = error}
       )
-  fetch("http://127.0.0.1:2435/users")
-      .then(res => res.json())
-      .then(
-        (result) => {users += result.items},
-        (error) => {errorMessage = error}
-      )
-
+  ))
   return users;
 }
 
