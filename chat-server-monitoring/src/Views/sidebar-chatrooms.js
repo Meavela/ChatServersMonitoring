@@ -17,6 +17,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import PeopleIcon from '@material-ui/icons/People';
 import ChatIcon from '@material-ui/icons/Chat';
+import Chatrooms from '../Components/chatrooms';
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -140,18 +141,14 @@ export default function PersistentDrawerLeft() {
         </List>
       </Drawer>
       
-      {/* METTRE LE CODE ICI 
-      
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
       >
         <div className={classes.drawerHeader} />
-        <Users />
+        <Chatrooms />
       </main>
-      
-      */}
 
     </div>
   );
