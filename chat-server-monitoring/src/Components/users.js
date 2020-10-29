@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react';
+import ActiveUsers from './activeUsers';
+import ListUsers from './listUsers';
 
-class UsersView extends React.Component {
+class Users extends React.Component {
 
     render() {
         return (
             <div>
-                hey
+                <ActiveUsers />
+                <ListUsers />
             </div>
         )
     }
 }
 
-export default UsersView
+export default Users
