@@ -28,7 +28,7 @@ export default function ActiveUsers() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} style={{ textAlign : 'center' }}>
+    <Card className="count-card">
         <CardHeader title="Active users" style={{ color : 'blue', paddingBottom : 0 }}/>
         <CardContent style={{ paddingTop: 0 }}>
             <h1 style={{ fontSize : 40 }}>
