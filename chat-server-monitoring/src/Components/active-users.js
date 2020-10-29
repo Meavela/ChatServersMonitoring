@@ -25,19 +25,19 @@ const useStyles = makeStyles({
 });
 
 export default function ActiveUsers() {
-  const classes = useStyles();
-
   return (
     <Card className="count-card">
-        <CardHeader title="Active users" style={{ color : 'blue', paddingBottom : 0 }}/>
-        <CardContent style={{ paddingTop: 0 }}>
-            <h1 style={{ fontSize : 40 }}>
-                1
-            </h1>
-            <Typography style={{ color: 'grey' }}>
-                On servers :
+        <CardHeader title="Active users" className="title"/>
+        <CardContent>
+            <Typography variant="h2">
+              1
             </Typography>
-            <ActiveServers />
+            <div className="servers">
+              <Typography>
+                  On servers :
+              </Typography>
+              <ActiveServers />
+            </div>
         </CardContent>
     </Card>
   );

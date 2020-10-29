@@ -32,3 +32,12 @@ div.list-card-content {
   font-size: 20px;
   margin: 10px;
 }
+
+.servers{
+  color: grey;
+}
+
+.servers-items{
+  text-align: center !important;
+  padding: 0 !important;
+}

@@ -44,9 +44,9 @@ export default function ListUsers() {
   
   var users = getUsers();
   return (
-    <Card className={classes.root} style={{ textAlign : 'center' }}>
-        <CardHeader title="Users" style={{ color : 'blue', paddingBottom : 0 }}/>
-        <CardContent style={{ paddingTop: 0 }}>
+    <Card className="list-card">
+        <CardHeader title="Users" className="title"/>
+        <CardContent className="list-card-content">
             <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>

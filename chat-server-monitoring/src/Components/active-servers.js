@@ -10,8 +10,8 @@ export default function ActiveServers(){
     return (
         <List>
             {rows.map((text) => (
-                <ListItem button key={text} style={{ textAlign : 'center', padding:0 }}>
-                    <ListItemText primary={text} style={{ color : 'grey' }}/>
+                <ListItem button key={text} className="servers-items">
+                    <ListItemText primary={text}/>
                 </ListItem>
             ))}
         </List>
