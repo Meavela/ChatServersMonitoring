@@ -4,6 +4,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import ActiveServers from './active-servers'
 import { CardHeader } from '@material-ui/core';
+import Servers from '../servers.json'
+import axios from 'axios';
 
 class CountChatRooms extends React.Component {
     constructor(props) {
@@ -13,10 +15,19 @@ class CountChatRooms extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            chatrooms: ["chatroomMock1", "chatroomMock2"],
-        })
+    async componentDidMount() {
+        this.setState({ chatrooms: [] })
+        var chatrooms = []
+        Servers.names.forEach(element => {
+            axios.get(element + "/chatrooms")
+                .then(res => {
+                    var response = res.data
+                    response.forEach(val => {
+                        chatrooms.push(val)
+                    });
+                    this.setState({ chatrooms: chatrooms })
+                })
+        });
     }
 
     render() {
