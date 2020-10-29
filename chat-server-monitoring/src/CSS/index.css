@@ -23,12 +23,14 @@ div.list-card {
 }
 
 div.list-card-content {
+  padding-top: 0 !important;
   padding-left: 24px;
   padding-right: 24px;
 }
 
 .title {
   color: #3F51B5;
+  padding-bottom: 0 !important;
   font-size: 20px;
   margin: 10px;
 }

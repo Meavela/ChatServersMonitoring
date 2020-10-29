@@ -6,8 +6,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 
 const styles = {
@@ -34,10 +34,8 @@ class ListChatRooms extends React.Component {
         return (
             <div>
                 <Card className="list-card">
+                    <CardHeader title="Chatrooms" className="title"/>
                     <CardContent className="list-card-content">
-                        <Typography className="title">
-                            Chatrooms
-                        </Typography>
                         <TableContainer component={Paper}>
                             <Table className={styles.table} aria-label="simple table">
                                 <TableHead>
