@@ -8,6 +8,7 @@ class Users extends React.Component {
         return (
             <div>
                 <ActiveUsers />
+                <br />
                 <ListUsers />
             </div>
         )
