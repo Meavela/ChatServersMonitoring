@@ -18,8 +18,6 @@ const useStyles = makeStyles({
   },
 });
 
-var errorMessage = "";
-
 function getUsers(){
   var users = [{server : 'http://127.0.0.1:4567', userId : 0, name : 'Lou', status : 'ACTIVE'},
                {server : 'http://127.0.0.1:2435', userId : 1, name : 'Marc-Antoine', status : 'INACTIVE'}];
@@ -28,8 +26,7 @@ function getUsers(){
     fetch(text)
       .then(res => res.json())
       .then(
-        (result) => {users += result.items},
-        (error) => {errorMessage = error}
+        (result) => {users += result.items}
       )
   ))
   return users;
