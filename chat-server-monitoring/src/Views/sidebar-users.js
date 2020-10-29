@@ -17,7 +17,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import PeopleIcon from '@material-ui/icons/People';
 import ChatIcon from '@material-ui/icons/Chat';
-import Users from '../Components/users'
+import Users from '../Components/users';
+import { Link } from "react-router-dom";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -131,7 +132,7 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
           {['Users', 'Chatrooms'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} component={Link} to={index % 2 === 0 ? "/Users" : "/Chatrooms"}>
               <ListItemIcon>{index % 2 === 0 ? <PeopleIcon /> : <ChatIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
