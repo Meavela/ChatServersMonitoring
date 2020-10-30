@@ -9,6 +9,8 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
+import Servers from '../servers.json'
+import axios from 'axios';
 
 const styles = {
     table: {
@@ -20,14 +22,30 @@ class ListChatRooms extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            chatrooms: [],
+            chatrooms: [{
+                ip: "",
+                name: "",
+            }],
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            chatrooms: ["chatroomMock1", "chatroomMock2"],
-        })
+    async componentDidMount() {
+        this.setState({ chatrooms: [] })
+        var chatrooms = []
+        Servers.names.forEach(element => {
+            axios.get(element + "/chatrooms")
+                .then(res => {
+                    var response = res.data
+                    response.forEach(val => {
+                        let item = {
+                            ip: element,
+                            name: val,
+                        }
+                        chatrooms.push(item)
+                    });
+                    this.setState({chatrooms: chatrooms})
+                })
+        });
     }
 
     render() {
@@ -45,12 +63,12 @@ class ListChatRooms extends React.Component {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {this.state.chatrooms.map((key) => (
-                                        <TableRow key={key}>
+                                    {Object.keys(this.state.chatrooms).map((key, index) => (
+                                        <TableRow key={index}>
                                             <TableCell component="th" scope="row">
-                                                {"http://127.0.0.1:4567"}
+                                                {this.state.chatrooms[key].ip}
                                             </TableCell>
-                                            <TableCell align="left">{key}</TableCell>
+                                            <TableCell align="left">{this.state.chatrooms[key].name}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
