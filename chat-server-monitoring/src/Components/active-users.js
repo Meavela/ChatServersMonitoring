@@ -5,46 +5,51 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import ActiveServers from './active-servers';
 import Servers from '../servers.json'
+import axios from 'axios';
 
-
-function getUsers(){
-  var allUsers = [{server : 'http://127.0.0.1:4567', userId : 0, name : 'Lou', status : 'ACTIVE'},
-               {server : 'http://127.0.0.1:2435', userId : 1, name : 'Marc-Antoine', status : 'INACTIVE'}];
-
-  Servers.names.map((text) => (
-    fetch(text)
-      .then(res => res.json())
-      .then(
-        (result) => {allUsers += result.items}
-      )
-  ))
-
-  var activeUsers = [];
-  for (let index = 0; index < allUsers.length; index++) {
-    const element = allUsers[index];
-    if (element.status === "ACTIVE") {
-      activeUsers.push(element);
+class ActiveUsers extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        users: [],
     }
   }
 
-  return activeUsers.length;
+  async componentDidMount() {
+    this.setState({ users: [] })
+    var users = []
+    Servers.names.forEach(element => {
+        axios.get(element + "/users")
+            .then(res => {
+                var response = res.data
+                response.forEach(val => {
+                  users.push(val)
+                });
+                this.setState({ users: users })
+            })
+    });
+  }
+
+  render() {
+    return (
+        <div>
+            <Card className="count-card">
+                <CardHeader className="title" title="Active users"></CardHeader>
+                <CardContent>
+                    <Typography variant="h2">
+                        {this.state.users.length}
+                    </Typography>
+                    <div className="servers">
+                      <Typography>
+                          On servers :
+                      </Typography>
+                      <ActiveServers />
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+    )
+  }
 }
 
-export default function ActiveUsers() {
-  return (
-    <Card className="count-card">
-        <CardHeader title="Active users" className="title"/>
-        <CardContent>
-            <Typography variant="h2">
-              {getUsers()}
-            </Typography>
-            <div className="servers">
-              <Typography>
-                  On servers :
-              </Typography>
-              <ActiveServers />
-            </div>
-        </CardContent>
-    </Card>
-  );
-}
+export default ActiveUsers

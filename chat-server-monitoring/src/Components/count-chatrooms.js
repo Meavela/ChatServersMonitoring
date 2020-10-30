@@ -15,7 +15,7 @@ class CountChatRooms extends React.Component {
         }
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         this.setState({ chatrooms: [] })
         var chatrooms = []
         Servers.names.forEach(element => {

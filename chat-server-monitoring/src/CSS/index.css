@@ -13,9 +13,13 @@ code {
 }
 
 .count-card {
-  width: auto !important;
+  width: 50%;
   text-align: center;
   margin: 50px;
+}
+
+.homeActive.count-card {
+  width: auto !important;
 }
 
 div.list-card {

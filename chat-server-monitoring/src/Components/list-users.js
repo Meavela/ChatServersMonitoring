@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -11,61 +10,81 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Servers from '../servers.json'
+import axios from 'axios';
 
-const useStyles = makeStyles({
+const styles = {
   table: {
-    minWidth: 650,
+      minWidth: 650,
   },
-});
+}
 
-function getUsers(){
-  var users = [{server : 'http://127.0.0.1:4567', userId : 0, name : 'Lou', status : 'ACTIVE'},
-               {server : 'http://127.0.0.1:2435', userId : 1, name : 'Marc-Antoine', status : 'INACTIVE'}];
+class ListUsers extends React.Component {
+  constructor(props) {
+      super(props)
+      this.state = {
+          users: [{
+              ip: "",
+              id: "",
+              name: "",
+              status: "",
+          }],
+      }
+  }
 
-  Servers.names.map((text) => (
-    fetch(text)
-      .then(res => res.json())
-      .then(
-        (result) => {users += result.items}
+  async componentDidMount() {
+      this.setState({ users: [] })
+      var users = []
+      Servers.names.forEach(element => {
+          axios.get(element + "/users")
+              .then(res => {
+                  var response = res.data
+                  response.forEach(val => {
+                      let item = {
+                          ip: element,
+                          id: val.account.id,
+                          name: val.account.username,
+                          status: val.currentStatus
+                      }
+                      users.push(item)
+                  });
+                  this.setState({users: users})
+              })
+      });
+  }
+
+  render() {
+      return (
+          <div>
+              <Card className="list-card">
+                <CardHeader title="Users" className="title"/>
+                <CardContent className="list-card-content">
+                    <TableContainer component={Paper}>
+                        <Table className={styles.table} aria-label="simple table">
+                            <TableHead>
+                            <TableRow>
+                                <TableCell>Server</TableCell>
+                                <TableCell align="right">User ID</TableCell>
+                                <TableCell align="right">Username</TableCell>
+                                <TableCell align="right">Status</TableCell>
+                            </TableRow>
+                            </TableHead>
+                            <TableBody>
+                            {Object.keys(this.state.users).map((key, index) => (
+                                <TableRow key={index}>
+                                <TableCell component="th" scope="row">{this.state.users[key].ip}</TableCell>
+                                <TableCell align="right">{this.state.users[key].id}</TableCell>
+                                <TableCell align="right">{this.state.users[key].username}</TableCell>
+                                <TableCell align="right">{this.state.users[key].status}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </CardContent>
+            </Card>
+          </div>
       )
-  ))
-  return users;
+  }
 }
 
-export default function ListUsers() {
-  const classes = useStyles();
-  
-  var users = getUsers();
-  return (
-    <Card className="list-card">
-        <CardHeader title="Users" className="title"/>
-        <CardContent className="list-card-content">
-            <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="simple table">
-                    <TableHead>
-                    <TableRow>
-                        <TableCell>Server</TableCell>
-                        <TableCell align="right">User ID</TableCell>
-                        <TableCell align="right">Username</TableCell>
-                        <TableCell align="right">Status</TableCell>
-                    </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {users.map((row) => (
-                        <TableRow key={row.server}>
-                        <TableCell component="th" scope="row">
-                            {row.server}
-                        </TableCell>
-                        <TableCell align="right">{row.userId}</TableCell>
-                        <TableCell align="right">{row.name}</TableCell>
-                        <TableCell align="right">{row.status}</TableCell>
-                        </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </CardContent>
-    </Card>
-    
-  );
-}
+export default ListUsers
