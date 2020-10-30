@@ -152,7 +152,9 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Home />
+        <div className="homeTest">
+          <Home />
+        </div>
       </main>
     </div>
   );
