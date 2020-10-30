@@ -39,10 +39,12 @@ class CountChatRooms extends React.Component {
                         <Typography variant="h2">
                             {this.state.chatrooms.length}
                         </Typography>
-                        <Typography style={{ color: 'grey' }}>
-                            On servers :
-                        </Typography>
-                        <ActiveServers />
+                        <div className="servers">
+                            <Typography>
+                                On servers :
+                            </Typography>
+                            <ActiveServers />
+                        </div>
                     </CardContent>
                 </Card>
             </div>

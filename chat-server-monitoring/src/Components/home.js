@@ -13,10 +13,10 @@ class Home extends React.Component {
             <Box>
                 <Grid container>
                     <Grid item xs={6}>
-                        <ActiveUsers flexGrow={1} className="homeActive"/>
+                        <ActiveUsers />
                     </Grid>
                     <Grid item xs={6}>
-                        <ActiveChatrooms flexGrow={1} className="homeActive"/>
+                        <ActiveChatrooms />
                     </Grid>
                 </Grid>
                 <br />
