@@ -12,12 +12,6 @@ import CardContent from '@material-ui/core/CardContent';
 import Servers from '../servers.json'
 import axios from 'axios';
 
-const styles = {
-    table: {
-        minWidth: 650,
-    },
-}
-
 class ListChatRooms extends React.Component {
     constructor(props) {
         super(props)
@@ -44,6 +38,8 @@ class ListChatRooms extends React.Component {
                         chatrooms.push(item)
                     });
                     this.setState({chatrooms: chatrooms})
+                }).catch(error => {
+                    // console.log(error)
                 })
         });
     }
@@ -55,7 +51,7 @@ class ListChatRooms extends React.Component {
                     <CardHeader title="Chatrooms" className="title"/>
                     <CardContent className="list-card-content">
                         <TableContainer component={Paper}>
-                            <Table className={styles.table} aria-label="simple table">
+                            <Table aria-label="simple table">
                                 <TableHead>
                                     <TableRow>
                                         <TableCell>Server</TableCell>

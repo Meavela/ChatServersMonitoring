@@ -26,6 +26,8 @@ class ActiveUsers extends React.Component {
                   users.push(val)
                 });
                 this.setState({ users: users })
+            }).catch(error => {
+              // console.log(error)
             })
     });
   }

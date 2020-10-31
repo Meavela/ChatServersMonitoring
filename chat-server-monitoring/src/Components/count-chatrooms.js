@@ -26,6 +26,8 @@ class CountChatRooms extends React.Component {
                         chatrooms.push(val)
                     });
                     this.setState({ chatrooms: chatrooms })
+                }).catch(error => {
+                    // console.log(error)
                 })
         });
     }
