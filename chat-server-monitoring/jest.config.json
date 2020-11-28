@@ -3,8 +3,9 @@
     "coverageReporters": ["lcov"],
     "coverageDirectory": "tests/coverage",
     "collectCoverageFrom": [
-        "**/*.{js,jsx}",
+        "**/Components/*.{js,jsx}",
         "!**/node_modules/**",
+        "!**/tests/**",
         "!**/vendor/**"
       ],
     "coverageThreshold": {
