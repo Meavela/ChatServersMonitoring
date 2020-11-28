@@ -2,6 +2,11 @@
     "collectCoverage": true,
     "coverageReporters": ["lcov"],
     "coverageDirectory": "tests/coverage",
+    "collectCoverageFrom": [
+        "**/*.{js,jsx}",
+        "!**/node_modules/**",
+        "!**/vendor/**"
+      ],
     "coverageThreshold": {
      "global": {
      "branches": 0,
