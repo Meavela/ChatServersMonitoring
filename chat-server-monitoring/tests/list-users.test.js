@@ -9,7 +9,7 @@ jest.mock('../src/Components/list-users');
 // Check that the Users page display the right things
 test('Display List User page', () => {
     const {container} = render(<ListUsers />)
-    expect(container.textContent).toMatch('UsersServerUser IDUsernameStatus151.11.52.681LouACTIVE172.82.64.792Marc-AntoineACTIVE')
+    expect(container.textContent).toMatch('UsersServerUser IDUsernameStatushttp://127.0.0.1:7419/unittest1LouACTIVEhttp://127.0.0.1:6592/unitest22Marc-AntoineACTIVE')
 });
 
 // Check that the Users page don't change

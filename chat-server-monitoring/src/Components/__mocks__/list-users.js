@@ -29,13 +29,13 @@ class ListUsers extends React.Component {
                             </TableHead>
                             <TableBody>
                                 <TableRow key="0">
-                                    <TableCell component="th" scope="row">151.11.52.68</TableCell>
+                                    <TableCell component="th" scope="row">http://127.0.0.1:7419/unittest</TableCell>
                                     <TableCell align="right">1</TableCell>
                                     <TableCell align="right">Lou</TableCell>
                                     <TableCell align="right">ACTIVE</TableCell>
                                 </TableRow>
                                 <TableRow key="1">
-                                    <TableCell component="th" scope="row">172.82.64.79</TableCell>
+                                    <TableCell component="th" scope="row">http://127.0.0.1:6592/unitest2</TableCell>
                                     <TableCell align="right">2</TableCell>
                                     <TableCell align="right">Marc-Antoine</TableCell>
                                     <TableCell align="right">ACTIVE</TableCell>

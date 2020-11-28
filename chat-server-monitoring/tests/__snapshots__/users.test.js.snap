@@ -178,7 +178,7 @@ exports[`Not change Users page 1`] = `
                   role="cell"
                   scope="row"
                 >
-                  151.11.52.68
+                  http://127.0.0.1:7419/unittest
                 </th>
                 <td
                   aria-sort={null}
@@ -209,7 +209,7 @@ exports[`Not change Users page 1`] = `
                   role="cell"
                   scope="row"
                 >
-                  172.82.64.79
+                  http://127.0.0.1:6592/unitest2
                 </th>
                 <td
                   aria-sort={null}
