@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Not change List chatrooms component 1`] = `
+<div>
+  <div
+    className="MuiPaper-root MuiCard-root list-card MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      className="MuiCardHeader-root title"
+    >
+      <div
+        className="MuiCardHeader-content"
+      >
+        <span
+          className="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+        >
+          Chatrooms
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root list-card-content"
+    >
+      <div
+        className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <table
+          aria-label="simple table"
+          className="MuiTable-root"
+          role={null}
+        >
+          <thead
+            className="MuiTableHead-root"
+            role={null}
+          >
+            <tr
+              className="MuiTableRow-root MuiTableRow-head"
+              role={null}
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head"
+                scope="col"
+              >
+                Server
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                Chatroom
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="MuiTableBody-root"
+            role={null}
+          >
+            <tr
+              className="MuiTableRow-root"
+              role={null}
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body"
+                role="cell"
+                scope="row"
+              >
+                http://127.0.0.1:7419/unittest
+              </th>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Best
+              </td>
+            </tr>
+            <tr
+              className="MuiTableRow-root"
+              role={null}
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body"
+                role="cell"
+                scope="row"
+              >
+                http://127.0.0.1:6592/unitest2
+              </th>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Looser
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Not change List chatrooms page 1`] = `
+<div>
+  <div
+    className="MuiPaper-root MuiCard-root list-card MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      className="MuiCardHeader-root title"
+    >
+      <div
+        className="MuiCardHeader-content"
+      >
+        <span
+          className="MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
+        >
+          Chatrooms
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root list-card-content"
+    >
+      <div
+        className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <table
+          aria-label="simple table"
+          className="MuiTable-root"
+          role={null}
+        >
+          <thead
+            className="MuiTableHead-root"
+            role={null}
+          >
+            <tr
+              className="MuiTableRow-root MuiTableRow-head"
+              role={null}
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head"
+                scope="col"
+              >
+                Server
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft"
+                scope="col"
+              >
+                Chatroom
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="MuiTableBody-root"
+            role={null}
+          >
+            <tr
+              className="MuiTableRow-root"
+              role={null}
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body"
+                role="cell"
+                scope="row"
+              >
+                http://127.0.0.1:7419/unittest
+              </th>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Best
+              </td>
+            </tr>
+            <tr
+              className="MuiTableRow-root"
+              role={null}
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body"
+                role="cell"
+                scope="row"
+              >
+                http://127.0.0.1:6592/unitest2
+              </th>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+              >
+                Looser
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
