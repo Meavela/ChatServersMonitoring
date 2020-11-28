@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Display active servers 1`] = `
+exports[`Not change active servers 1`] = `
 <ul
   className="MuiList-root MuiList-padding"
 >
@@ -27,7 +27,7 @@ exports[`Display active servers 1`] = `
       <span
         className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
       >
-        http://127.0.0.1:2345
+        http://127.0.0.1:7419/unittest
       </span>
     </div>
   </div>
@@ -54,7 +54,7 @@ exports[`Display active servers 1`] = `
       <span
         className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
       >
-        http://127.0.0.1:5432
+        http://127.0.0.1:6592/unitest2
       </span>
     </div>
   </div>
